@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AspDotNetMVCDemo.Models.Employee>
+
+@{
+    ViewBag.Title = "Export To Excel Demo";
+}
+
+<h2>Export To Excel Demo</h2>
+
+<p style="font-weight:bold;color:red!important;float:right; border:1px solid red;padding:5px;">
+    @Html.ActionLink("Export To Excel", "ExportToExcel")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+       
+    </tr>
+}
+
+</table>
